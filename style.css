@@ -368,7 +368,7 @@ nav {
 
 
 .service{
-    background-image: url("../img bounce/SEP-6.jpg");
+    background-image: url("./img bounce/SEP-6.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -470,7 +470,7 @@ nav {
      minmax(1rem, 1fr)
      minmax(0, var(--max-width))
      minmax(1rem, 1fr);
-    background-image: url("../img bounce/first\ use.jpg");
+    background-image: url("./img bounce/first\ use.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
