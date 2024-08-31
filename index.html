@@ -76,36 +76,44 @@
             </div>
 
         </form>
+       <p id="responseMessage" style="display:none;">Sent!</p>
     </section>
 
-    <section class="section__container about__container" id="about" aria-label="About us section">
-        <div class="about__image" aria-label="About us image">
-            <img src="./background-img/evelina-friman-hw_sKmjb0ns-unsplash.jpg" alt="About us">
-        </div>
-        <div class="about__content" aria-label="About us content">
-            <p class="section__subheader">ABOUT US</p>
-            <h2 class="section__header"> Tailored Event Solutions, Just for You</h2>
-            <p class="section__description">
-                At Big Bounce, we transform your event vision into reality. Our goal is simple, to make every occasion
-                unforgettable. Whether it’s expert ushering, stylish rentals, or top-tier security, our dedicated team
-                ensures everything runs flawlessly.
-            </p>
-            <p class="section__description">
-                <span class="black"> With over a decade of experience</span>, we tailor our services to fit your unique
-                needs. From intimate gatherings to
-                grand celebrations, we handle every detail with precision, making sure your event stands out.
-            </p>
+    <section class="section__container booking__container" aria-label="Booking section">
+        <form action="https://formspree.io/f/xrbzjnga" method="POST" class="booking__form" aria-label="Booking form" id="bookingForm">
+            <div class="input__group" aria-label="Event type input group">
+                <span><i class="ri-calendar-2-fill"></i></span>
+                <div>
+                    <label for="Type of event">TYPE OF EVENT
+                    <input type="text" placeholder="Event type" aria-label="Enter the type of event" />
+                    </label>
+                </div>
+            </div>
 
-            <p class="section__description">Innovation and excellence drive us. We deliver creative solutions that go
-                beyond expectations and focus
-                on customer satisfaction. Let Big Bounce turn your event into an extraordinary experience that will
-                leave a lasting impression on your guests.</p>
-        </div>
+            <div class="input__group" aria-label="Enter the type of event" >
+                <span><i class="ri-calendar-2-fill"></i></span>
+                <div>
+                    <label for="date">DATE
+                    <input type="text" placeholder="Your event date ?" />
+                    </label>
+                </div>
+            </div>
 
-        <div class="about__btn">
-            <button class="btn">Discover More About Us</button>
-        </div>
+            <div class="input__group" aria-label="Enter the type of event">
+                <span><i class="ri-user-fill"></i></span>
+                <div>
+                    <label for="number">YOUR NUMBER
+                    <input type="text" aria-label="Enter the type of event" placeholder="Your number?" />
+                    </label>
+                </div>
+            </div>
 
+            <div class="input__group input__btn" aria-label="Submit button">
+                <button class="btn" aria-label="Get started button">Get Started</button>
+            </div>
+
+        </form>
+        <p id="responseMessage" style="display:none;">Sent!</p>
     </section>
 
     <section class="service" id="service" aria-label="Service section">
