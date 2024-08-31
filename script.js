@@ -182,3 +182,38 @@ var repeat = function() {
 };
 
 repeat();
+
+
+
+// SUCCESS MESSAGE !
+document.getElementById('bookingForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+    
+    // Create FormData object
+    const formData = new FormData(event.target);
+
+    // Send form data using Fetch API
+    fetch(event.target.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            // Display success message
+            document.getElementById('responseMessage').style.display = 'block';
+            // Optionally, hide the form after successful submission
+            event.target.reset();
+        } else {
+            // Handle errors
+            alert('There was a problem with your submission.');
+        }
+    })
+    .catch(error => {
+        // Handle network errors
+        console.error('Error:', error);
+        alert('There was a problem with your submission.');
+    });
+});
