@@ -61,6 +61,12 @@ ScrollReveal().reveal(".about__btn", {
     Interval:500,
 });
 
+//item container
+ScrollReveal().reveal(".item__card", {
+    ...scrollRevealOption,
+    Interval:500,
+});
+
 //Service container
 ScrollReveal().reveal(".service__list li", {
   ...scrollRevealOption,
