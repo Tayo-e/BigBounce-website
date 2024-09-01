@@ -189,38 +189,3 @@ var repeat = function() {
 
 repeat();
 
-
-document.getElementById('bookingForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission
-    
-    // Create FormData object
-    const formData = new FormData(event.target);
-
-    // Send form data using Fetch API
-    fetch(event.target.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
-    .then(response => {
-        if (response.ok) {
-            // Display success message
-            document.getElementById('responseMessage').style.display = 'block';
-            // Hide the form after successful submission
-            event.target.reset();
-        } else {
-            // Handle errors
-            return response.json().then(error => {
-                console.error('Error:', error);
-                alert('There was a problem with your submission: ' + (error.message || 'Unknown error'));
-            });
-        }
-    })
-    .catch(error => {
-        // Handle network errors
-        console.error('Error:', error);
-        alert('There was a problem with your submission. Please try again later.');
-    });
-});
