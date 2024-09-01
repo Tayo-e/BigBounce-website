@@ -190,10 +190,8 @@ var repeat = function() {
 repeat();
 
 
-
-// SUCCESS MESSAGE !
 document.getElementById('bookingForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault(); // Prevent the default form submission
     
     // Create FormData object
     const formData = new FormData(event.target);
@@ -210,16 +208,19 @@ document.getElementById('bookingForm').addEventListener('submit', function(event
         if (response.ok) {
             // Display success message
             document.getElementById('responseMessage').style.display = 'block';
-            // Optionally, hide the form after successful submission
+            // Hide the form after successful submission
             event.target.reset();
         } else {
             // Handle errors
-            alert('There was a problem with your submission.');
+            return response.json().then(error => {
+                console.error('Error:', error);
+                alert('There was a problem with your submission: ' + (error.message || 'Unknown error'));
+            });
         }
     })
     .catch(error => {
         // Handle network errors
         console.error('Error:', error);
-        alert('There was a problem with your submission.');
+        alert('There was a problem with your submission. Please try again later.');
     });
 });
