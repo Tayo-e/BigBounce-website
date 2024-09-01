@@ -43,42 +43,38 @@
         </div>
     </header>
 
-    <section class="section__container booking__container" aria-label="Booking section">
-        <form action="https://formspree.io/f/xrbzjnga" method="POST" class="booking__form" aria-label="Booking form" id="bookingForm">
-            <div class="input__group" aria-label="Event type input group">
-                <span><i class="ri-megaphone-fill"></i></span>
-                <div>
-                    <label name="Event" for="Type of event" autocomplete="off" required>TYPE OF EVENT
-                    <input type="text" placeholder="Event type" aria-label="Enter the type of event" />
-                    </label>
-                </div>
+   <section class="section__container booking__container" aria-label="Booking section">
+    <form action="https://formspree.io/f/xrbzjnga" method="POST" class="booking__form" aria-label="Booking form" id="bookingForm">
+        <div class="input__group" aria-label="Event type input group">
+            <span><i class="ri-megaphone-fill"></i></span>
+            <div>
+                <label for="eventType">TYPE OF EVENT</label>
+                <input type="text" name="eventType" id="eventType" placeholder="Event type" aria-label="Enter the type of event" autocomplete="off" required />
             </div>
+        </div>
 
-            <div class="input__group" aria-label="Enter the type of event" >
-                <span><i class="ri-calendar-2-fill"></i></span>
-                <div>
-                    <label for="date" name="Date" autocomplete="off" required>DATE
-                    <input type="text" placeholder="Your event date ?" />
-                    </label>
-                </div>
+        <div class="input__group" aria-label="Enter the event date">
+            <span><i class="ri-calendar-2-fill"></i></span>
+            <div>
+                <label for="eventDate">DATE</label>
+                <input type="text" name="eventDate" id="eventDate" placeholder="Your event date?" aria-label="Enter the event date" autocomplete="off" required />
             </div>
+        </div>
 
-            <div class="input__group" aria-label="Enter the type of event">
-                <span><i class="ri-user-fill"></i></span>
-                <div>
-                    <label name="Number" for="number" autocomplete="off" required>YOUR NUMBER
-                    <input type="text" aria-label="Enter the type of event" placeholder="Your number?" />
-                    </label>
-                </div>
+        <div class="input__group" aria-label="Enter your number">
+            <span><i class="ri-user-fill"></i></span>
+            <div>
+                <label for="phoneNumber">YOUR NUMBER</label>
+                <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Your number?" aria-label="Enter your number" autocomplete="off" required />
             </div>
+        </div>
 
-            <div class="input__group input__btn" aria-label="Submit button">
-                <button class="btn" aria-label="Get started button">Get Started</button>
-            </div>
+        <div class="input__group input__btn" aria-label="Submit button">
+            <button class="btn" aria-label="Get started button">Get Started</button>
+        </div>
+    </form>
+</section>
 
-        </form>
-        <p id="responseMessage" style="display:none;">Sent!</p>
-    </section>
 
     <section class="service" id="service" aria-label="Service section">
         <div class="section__container service__container">
