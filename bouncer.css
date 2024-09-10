@@ -28,7 +28,7 @@ body {
 }
 
 .header__bounce{
-    background: var(--primary-color);  
+    background:  rgb(23, 23, 23);  
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
