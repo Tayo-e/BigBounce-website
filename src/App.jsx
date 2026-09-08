@@ -27,7 +27,7 @@ const images = {
   ignite: new URL('../partners/ignite.png', import.meta.url).href,
   nft: new URL('../partners/nft01.png', import.meta.url).href,
   pulse: new URL('../partners/pulse logo.png', import.meta.url).href,
-  medplus: new URL('../partners/medplus.png', import.meta.url).href,
+  medplus: new URL('../partners/medplus.jpg', import.meta.url).href,
 }
 
 const pageMeta = {
