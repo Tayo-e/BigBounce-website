@@ -147,6 +147,7 @@ const partners = [
   ['Ignite Mega Stars', images.ignite],
   ['NFT Nigeria', images.nft],
   ['Pulse Nigeria', images.pulse],
+  ['Medplus', images.medplus],
 ]
 function PartnerCarousel() { return <section className="partner-carousel reveal" aria-labelledby="partner-heading"><div className="partner-heading"><Eyebrow>In the room with</Eyebrow><h2 id="partner-heading">Our partners.</h2></div><div className="partner-track" tabIndex="0" aria-label="Partner logos carousel. Animation pauses while focused."><div className="partner-rail">{partners.map(([name, image]) => <div className="partner-mark" key={name}><img src={image} alt={name} loading="lazy" /></div>)}</div><div className="partner-rail" aria-hidden="true">{partners.map(([name, image]) => <div className="partner-mark" key={`${name}-duplicate`}><img src={image} alt="" loading="lazy" /></div>)}</div></div><p className="partner-caption">Selected organisations and events represented by Big Bounce.</p></section> }
 
