@@ -21,6 +21,12 @@ const images = {
   usherGroup: new URL('../img bounce/Ushers/WhatsApp Image 2024-09-03 at 14.42.41_3f377cd8.jpg', import.meta.url).href,
   barricade: new URL('../Rentals/IMG-20240816-WA0003.jpg', import.meta.url).href,
   rental: new URL('../Rentals/Screenshot_20220118-082709_Galaxy Store.jpg', import.meta.url).href,
+  bikers: new URL('../partners/bikers.png', import.meta.url).href,
+  budweiser: new URL('../partners/budweiser.svg', import.meta.url).href,
+  unilag: new URL('../partners/download.jpeg', import.meta.url).href,
+  ignite: new URL('../partners/ignite.png', import.meta.url).href,
+  nft: new URL('../partners/nft01.png', import.meta.url).href,
+  pulse: new URL('../partners/pulse logo.png', import.meta.url).href,
 }
 
 const pageMeta = {
@@ -107,7 +113,7 @@ function Home() {
     gsap.to('.hero-image', { yPercent: 10, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } })
     gsap.utils.toArray('.reveal').forEach((element) => gsap.from(element, { y: 42, opacity: 0, duration: .8, ease: 'power3.out', scrollTrigger: { trigger: element, start: 'top 84%' } }))
   })
-  return <Layout><div ref={scope}><section className="hero"><img className="hero-image" src={images.hero} alt="Big Bounce professional bouncer team at a Lagos event" fetchPriority="high" /><div className="hero-shade" /><div className="hero-stamp" aria-hidden="true">LAGOS<br />EVENT<br />SECURITY</div><div className="hero-content"><Eyebrow><span className="hero-kicker">Big Bounce Events / Lagos</span></Eyebrow><h1 className="hero-title"><span>THE DOOR</span><span>STARTS <em>HERE.</em></span></h1><p className="hero-copy">Professional bouncers and event security for parties, weddings, clubs, concerts, corporate gatherings, and private events in Lagos.</p><div className="hero-actions"><Cta>Hire bouncers</Cta><a className="hero-reel-link" href="#event-reel">See the highlight reel <ArrowDownRight size={19} /></a></div><div className="hero-meta"><span><ShieldCheck /> Event-first teams</span><span><CalendarCheck /> Lagos coverage</span></div></div></section><Marquee /><WhyBigBounce /><HighlightReel /><BouncerShowcase /><ServiceStrip /><Process /><OtherServices /><FaqPreview /><FinalCta /></div></Layout>
+  return <Layout><div ref={scope}><section className="hero"><img className="hero-image" src={images.hero} alt="Big Bounce professional bouncer team at a Lagos event" fetchPriority="high" /><div className="hero-shade" /><div className="hero-stamp" aria-hidden="true">LAGOS<br />EVENT<br />SECURITY</div><div className="hero-content"><Eyebrow><span className="hero-kicker">Big Bounce Events / Lagos</span></Eyebrow><h1 className="hero-title"><span>THE DOOR</span><span>STARTS <em>HERE.</em></span></h1><p className="hero-copy">Professional bouncers and event security for parties, weddings, clubs, concerts, corporate gatherings, and private events in Lagos.</p><div className="hero-actions"><Cta>Hire bouncers</Cta><a className="hero-reel-link" href="#event-reel">See the highlight reel <ArrowDownRight size={19} /></a></div><div className="hero-meta"><span><ShieldCheck /> Event-first teams</span><span><CalendarCheck /> Lagos coverage</span></div></div></section><Marquee /><WhyBigBounce /><HighlightReel /><BouncerShowcase /><ServiceStrip /><Process /><OtherServices /><PartnerCarousel /><FaqPreview /><FinalCta /></div></Layout>
 }
 
 function Marquee() { return <div className="marquee" aria-hidden="true"><div>BIG EVENTS <i>•</i> BIG ENERGY <i>•</i> BIG BOUNCE <i>•</i> BIG EVENTS <i>•</i> BIG ENERGY <i>•</i> BIG BOUNCE <i>•</i></div></div> }
@@ -132,6 +138,16 @@ function ServiceStrip() { const services = [['01', 'Bouncers', 'Professional peo
 function Process() { const steps = [['01', 'Tell us about your event', 'Date, venue area, format, and the support you are considering.'], ['02', 'We build your team', 'We discuss the best event support approach and your quote.'], ['03', 'Confirm the booking', 'Approve the details and reserve the appropriate support.'], ['04', 'You run the event', 'Your professional team arrives ready for the agreed plan.']]; return <section className="process"><div className="section process-inner"><Eyebrow>How it works</Eyebrow><h2>Your event.<br /><em>Our door.</em></h2><ol>{steps.map(([number, title, text]) => <li className="reveal" key={number}><span>{number}</span><h3>{title}</h3><p>{text}</p></li>)}</ol></div></section> }
 
 function OtherServices() { return <section className="section other-services reveal"><div className="section-heading"><Eyebrow>Beyond the door</Eyebrow><h2>The support that keeps an event moving.</h2></div><div className="other-grid"><Link to="/event-rentals" className="media-service"><img src={images.barricade} alt="Metal barricades available for event rentals" loading="lazy" /><div><span>01 / Barricade rentals</span><h3>Guide the room.</h3><ArrowRight /></div></Link><Link to="/ushers" className="media-service"><img src={images.usher} alt="Professional usher at an event" loading="lazy" /><div><span>02 / Professional ushers</span><h3>Welcome the room.</h3><ArrowRight /></div></Link></div></section> }
+
+const partners = [
+  ['Bikers with Attitude', images.bikers],
+  ['University of Lagos', images.unilag],
+  ['Budweiser', images.budweiser],
+  ['Ignite Mega Stars', images.ignite],
+  ['NFT Nigeria', images.nft],
+  ['Pulse Nigeria', images.pulse],
+]
+function PartnerCarousel() { return <section className="partner-carousel reveal" aria-labelledby="partner-heading"><div className="partner-heading"><Eyebrow>In the room with</Eyebrow><h2 id="partner-heading">Our partners.</h2></div><div className="partner-track" tabIndex="0" aria-label="Partner logos carousel. Animation pauses while focused."><div className="partner-rail">{partners.map(([name, image]) => <div className="partner-mark" key={name}><img src={image} alt={name} loading="lazy" /></div>)}</div><div className="partner-rail" aria-hidden="true">{partners.map(([name, image]) => <div className="partner-mark" key={`${name}-duplicate`}><img src={image} alt="" loading="lazy" /></div>)}</div></div><p className="partner-caption">Selected organisations and events represented by Big Bounce.</p></section> }
 
 const faqs = [['How much does it cost to hire a bouncer?', 'Pricing depends on the date, event format, location, duration, and the support required. Contact us with your event details for a tailored quote.'], ['How many bouncers do I need for my event?', 'The right number depends on guest count, venue layout, entry points, event type, and the responsibilities you need covered.'], ['Can I hire bouncers for a private party or wedding?', 'Yes. Big Bounce Events supports private parties, weddings, and other social occasions across Lagos.'], ['How far in advance should I book?', 'Earlier booking gives more room to plan your event support. Contact us as soon as you have your event date and core details.']]
 function FaqPreview() { return <section className="section faq-section reveal"><div className="section-heading"><Eyebrow>FAQs</Eyebrow><h2>Before you book.</h2></div><div className="faq-list">{faqs.slice(0, 3).map(([q, a]) => <details key={q}><summary>{q}<ChevronDown /></summary><p>{a}</p></details>)}</div><Link className="text-link" to="/faq">See all questions <ArrowRight size={17} /></Link></section> }
